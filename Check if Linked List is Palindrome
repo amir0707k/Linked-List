@@ -101,6 +101,8 @@ class Solution
 		Node reversed = reverse(temp);
 
 		Node curr = head;
+		//used this loop to check if loop is reversed or not
+		// If this loop is not commented out, our reversed will reach to end
 		/*while(reversed!=null){
 			System.out.print(reversed.data+" ");
 			reversed = reversed.next;
@@ -125,7 +127,7 @@ class Solution
     }
     
 }
-
+//used this loop to check if the loop is copied or not
 /*while(curr!=null){
 			System.out.print(curr.data+" ");
 			curr = curr.next;
