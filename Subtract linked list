@@ -1,0 +1,50 @@
+// My code, it's working for smaller numbers but not for greater numbers
+class Solution{   
+
+	static Node reverse(Node head){
+		Node curr = head;
+		Node prev = null;
+		while(curr!=null){
+			Node temp = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = temp;
+		}
+		return prev;
+	}
+    static Node subtract(Node l1, Node l2)
+	{
+		int num1 = 0;
+		int num2 = 0;
+		Node H1 = l1;
+		Node H2 = l2;
+		while(H1!=null){
+			num1 = num1*10 +H1.data;
+			H1 = H1.next;
+		}
+		while(H2 != null){
+			num2 = num2*10 + H2.data;
+			H2 = H2.next;
+		}
+		int result = 0;
+		if(num1<num2){
+			result = num2 - num1;
+		}
+		else if(num1 == num2){
+			result = 0;
+		}
+		else{
+			result = num1 - num2;
+		}
+		Node dummy = new Node(-1);
+		Node nn = dummy;
+		while(result > 0){
+			nn.next = new Node(-1);
+			nn.next.data = result % 10;
+			nn = nn.next;
+			result = result/10;
+		}
+		Node res = reverse(dummy.next);
+		return res;
+    }
+}
